@@ -2,7 +2,7 @@
 
 ![Image](https://fi-le.net/images/brownian.png?raw=true)
 
-With this web demo, you can play around with and learn something about Brownian Motion, a fundamental concept in the theory of stochastic processes and probabilistic physics. If you want to see it live without cloning, you can do so ![here](https://fi-le.net/brown/).
+With this web demo, you can play around with and learn something about Brownian Motion, a fundamental concept in the theory of stochastic processes and probabilistic physics. If you want to see it live without cloning, you can do so [here](https://fi-le.net/brown/).
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/80x15.png" /></a>
