@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+	  <meta name="description" content="Brownian Motion">
+		<meta name="author" content="fi-le">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Brownian Motion</title>
+		<style media="screen">
+			html {
+			  font-size: 62.5%; }
+			body {
+			  font-size: 1.5em;
+			  font-weight: 400;
+			  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+			  color: #222; }
+		</style>
+	</head>
+	<body>
+
+		<div style="padding:3%; margin:1%; border: 1px; border-style:dashed;">
+			<div style="text-align: center; width = 1000px;" id="canvasContainer">
+				<div style="text-align: left; margin-left:10%;">
+					<h1>Brownian Motion</h1>
+				</div>
+				<canvas id="canvas" width="1000px;" height="500px" style = "border: 1px; border-style: dashed;"></canvas>
+			</div>
+
+			<div style="text-align: center;">
+				<p>
+					<button type="button" name="Stop" onclick="stop()" id="stopButton"> Stop </button>
+					<button type="button" onclick="clearCanvas()"> Reset </button>
+					<button type="button" name="Download" onclick="download()" id="downloadButton">Download</button>
+				</p>
+				</div>
+				<div style="margin-left:10%">
+					<p>Speed: <input style="" type="range" min="1" max="100" value="5" class="slider" id="speedSlider"></p>
+					<p>Variance: <input type="range" min="0" max="40" value="5" class="slider" id="accuracySlider"></p>
+				</div>
+
+				<div style="margin:10%">
+					<h4>What is brownian motion?</h4>
+					Brownian Motion is pretty cool! Imagine a random walk in some space. Maybe you have a point on a plane, it moves one step right, left, up and down with probability 1/4 each. You can do interesting things with that process, for example think about whether it comes back to its original position (it does, by the way). What makes it fundamentally different from our world though is, that we live in continuous time. In our world, things move smoothly. So wouldn't it be kind of neat to have a process like the random walk, but in continuous time?
+
+					Well, that process is Brownian motion. In the simulation above, you can see something that... isn't Brownian motion. As you can imagine, computers aren't very good at computing infinitely many time steps. But as you decrease the "variance" slider, you can see what kind of process we are talking about. Brownian motion was first described in written form when a guy called Robert Brown peeked into his microscope to look at his favourite small, lightweight object on a fluid and noticed that it was all jittery. Jittery, you will have noticed, as the simulation above.
+
+					 <h4>What's up with the colors?</h4>
+					 The fun thing is that Brownian Motion can happen in any space similar to the real numbers - if you want it to. So here, it happens in the x-y-Plane and a subsection of the RGB color space.
+					 Numerically, at each time step, all five coordinates get an increment drawn out of a centered normal distribution with variance as specified by you.
+
+					 <h4>And you can do maths with this?</h4>
+					 Yes! It's not that easy though, at least to me it's not obvious why a process with normally distributed increments and (almost surely) continuous paths would even exist. With some background in measure theory you can find out a few interesting things though, for example give confidence bands of where the process is likely to be for increasing time. The intuition is that going straight for a long time is very unlikely, therefore the process tends to stay where it started. Turns out, it only moves away from its starting point proportionally to the sqare root of the elapsed time, which is a pretty useful result! After all, this models real things also, like small particles in a fluid. (Note that this only applies to the above simulation as long as it doesn't touch the border.)
+
+				</div>
+				<div style="text-align:center; ">
+				 <p>fi-le © <a href="https://fi-le.net">fi-le.net</a> <br> licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img class="imger" alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/80x15.png" /></a><br /> </p>
+				 <p></p>
+			 </div>
+		</div>
+
+
+		<script src="src/draw.js" type="text/javascript"></script>
+
+	</body>
+</html>
